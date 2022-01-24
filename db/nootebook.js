@@ -1,15 +1,11 @@
 const fs = require('fs');
-
-//use util module
 const util = require('util');
-
-//use uuid to generate id
 const uuid = require("uuid").v1;
 
 const readFileAsync = util.promisify(fs.readFile);
 const writeFileAsync = util.promisify(fs.writeFile);
 
-class Store {
+class NoteBook {
     read() {
         return readFileAsync("db/db.json", "utf8")
     }
@@ -21,7 +17,7 @@ class Store {
         const { title, text } = note
 
         if (!title || !text) {
-            throw new Error("title and text cannot be blank")
+            throw new Error("Empty note")
         }
 
         const newNote = { title, text, id: uuid() }
@@ -45,4 +41,4 @@ class Store {
     }
 }
 
-module.exports = new Store();
+module.exports = new NoteBook();
