@@ -1,12 +1,12 @@
 const router = require('express').Router();
 
-const notebook = require('../db/db.json');
+const notebook = require('../db/nootebook');
 
 
 
 
 //request notebook
-router.get('./notes', (req, res) => {
+router.get('/notes', (req, res) => {
     notebook.getnotes() 
     .then(notes => {res.json(notes)})
     .catch(err => {res.status(500).json(err)})
