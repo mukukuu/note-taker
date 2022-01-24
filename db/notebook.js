@@ -30,9 +30,7 @@ class NoteBook {
 
     getNotes() {
         return this.read()
-            .then(notes => {
-                return JSON.parse(notes) || [];
-            })
+            .then(notes => {return JSON.parse(notes) || []; })
     }
     removeNote(id) {
         return this.getNotes()
