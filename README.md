@@ -5,6 +5,11 @@ https://aqueous-shelf-00482.herokuapp.com/
 
 <img width="1018" alt="Screen Shot 2022-01-23 at 7 50 31 PM" src="https://user-images.githubusercontent.com/92074903/150714096-76be8505-5ee8-4165-8605-74682f74384a.png">
 
+<img width="1022" alt="Screen Shot 2022-01-23 at 7 54 29 PM" src="https://user-images.githubusercontent.com/92074903/150714459-68e14e02-bdd8-4ffa-bf81-a62a92fb8e6e.png">
+
+
+
+
 ## Table of contents
 
 * [Installation](#installation)
