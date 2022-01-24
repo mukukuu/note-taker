@@ -6,19 +6,14 @@ const readFileAsync = util.promisify(fs.readFile);
 const writeFileAsync = util.promisify(fs.writeFile);
 
 class NoteBook {
-    read() {
-        return readFileAsync("db/db.json", "utf8")
-    }
-    write(note) {
-        return writeFileAsync("db/db.json", JSON.stringify(note))
-    }
+    read() { return readFileAsync("db/db.json", "utf8") }
+    write(note) { return writeFileAsync("db/db.json", JSON.stringify(note)) }
 
     addNote(note) {
         const { title, text } = note
 
         if (!title || !text) {
-            throw new Error("Empty note")
-        }
+            throw new Error("Empty note") }
 
         const newNote = { title, text, id: uuid() }
 
@@ -32,7 +27,7 @@ class NoteBook {
         return this.read()
             .then(notes => {return JSON.parse(notes) || []; })
     }
-    removeNote(id) {
+    deleteNote(id) {
         return this.getNotes()
             .then(notes => notes.filter(note => note.id !== id))
             .then(keptNotes => this.write(keptNotes))
@@ -40,3 +35,4 @@ class NoteBook {
 }
 
 module.exports = new NoteBook();
+

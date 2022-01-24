@@ -1,9 +1,5 @@
 const router = require('express').Router();
-
 const notebook = require('../db/notebook');
-
-
-
 
 //request notebook
 router.get('/notes', (req, res) => {
